@@ -1,16 +1,18 @@
 package counting_sheep;
 
+import java.util.Arrays;
+
 public class Counter {
 	public static int countSheeps(Boolean[] arrayOfSheeps) {
-		int count = 0;
-		for(int i = 0; i < arrayOfSheeps.length; i++)
-		{
-			if(arrayOfSheeps[i])
-			{
-				count++;
-			}
+		if(arrayOfSheeps.length == 0) {
+			return 0;
 		}
-		return count;
+		if(arrayOfSheeps[0])
+		{
+			return 1 + countSheeps(Arrays.copyOfRange(arrayOfSheeps, 1, arrayOfSheeps.length));
+		}
+		
+		return countSheeps(Arrays.copyOfRange(arrayOfSheeps, 1, arrayOfSheeps.length));
 	  }
 	
 	public static void main(String args[])
