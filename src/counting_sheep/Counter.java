@@ -7,7 +7,7 @@ public class Counter {
 		if(arrayOfSheeps.length == 0) {
 			return 0;
 		}
-		if(arrayOfSheeps[0])
+		if(arrayOfSheeps[0] != null && arrayOfSheeps[0])
 		{
 			return 1 + countSheeps(Arrays.copyOfRange(arrayOfSheeps, 1, arrayOfSheeps.length));
 		}
